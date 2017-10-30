@@ -1,0 +1,30 @@
+
+
+.slider {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: darkgrey;
+        
+        .menu-one {
+            background-color: tomato;
+            width: 15%;
+            transition: width 1s ease;
+        }
+
+        .menu-two {
+            background-color: lightgray;
+            width: 70%;  
+            transition: width 1s ease;            
+        }
+
+        .menu-three {
+            background-color: darkgrey;
+            width: 15%;  
+            transition: width 1s ease;            
+        }
+}
+
+
+
+
