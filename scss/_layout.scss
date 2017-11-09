@@ -1,0 +1,116 @@
+
+
+a {
+    color: #c24a6c;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 85% 15%;
+    grid-template-areas: 
+    "benni logo hagen" 
+    "footer footer footer";
+        @media screen and (max-width: $tablet-landscape-break) {
+            grid-template-columns: 1fr;            
+            grid-template-areas: 
+            "logo"
+            "benni"
+            'hagen'
+            'footer';
+            height: auto;
+        }
+}
+
+.logo {
+    background-image: $logo-complete;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.benni {
+    grid-area: benni;
+    background-image: url(../assets/benni-signature.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+    width: 24rem;
+    height: 9rem;
+    margin-left: auto;
+    margin-right: auto;
+        @media screen and (max-width: $phone-portrait-break) {
+            height: 5rem;
+    }
+        @media screen and (min-width: $phone-landscape-break) and (max-width: $tablet-landscape-break) {
+            height: 4rem;
+    }   
+    
+        @media screen and (min-width: $tablet-portrait-break) and (max-width: $tablet-landscape-break) {
+            height: 6rem;
+    } 
+        @media screen and (max-width: $small-screens) {
+            height: 5rem;
+    } 
+}
+
+.hagen {
+    grid-area: hagen;    
+    background-image: url(../assets/hagen-signature.svg);
+    @extend .benni
+}
+
+main {
+    display: grid;
+
+    .logo-container {
+        align-self: center;
+        align-items: center;
+            @media screen and (max-width: $phone-portrait-break) {
+            height: 50vh;
+            margin-bottom: 4rem;
+            margin-top: 4rem;
+        }  
+            @media screen and (min-width: $phone-landscape-break) and (max-width: $tablet-landscape-break) {
+            height: 30vh;
+            margin-bottom: 10rem;
+            margin-top: 4rem;
+        } 
+
+        .logo {
+            background-image: url(../assets/zweierlei-restaurant-duesseldorf-logo-complete.svg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            align-self: center;            
+            height: 30rem;
+                @media screen and (max-width: $phone-portrait-break) {
+                    height: 20rem;
+            } 
+                @media screen and (min-width: $phone-landscape-break) and (max-width: $tablet-landscape-break) {
+                height: 15rem;
+            } 
+                @media screen and (min-width: $tablet-portrait-break) {
+                    height: 25rem;
+                }          
+        }
+    }
+}
+
+footer {
+    grid-area: footer;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-align: center;
+    font-family: 'Overpass Mono', monospace;
+        @media screen and (max-width: $phone-portrait-break) {
+            margin-top: 4rem;
+            font-size: 1rem;
+    } 
+        @media screen and (min-width: $phone-landscape-break) and (max-width: $tablet-landscape-break) {
+            font-size: 1rem;
+            margin-top: 3rem;
+        }  
+}
