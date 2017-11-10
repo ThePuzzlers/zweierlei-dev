@@ -7,7 +7,7 @@
     background-color: darkgrey;
         
         .menu-one {
-            background-color: tomato;
+            background-color: #fff7ee;
             width: 15%;
             transition: width 1s ease;
         }
@@ -23,6 +23,43 @@
             width: 15%;  
             transition: width 1s ease;            
         }
+}
+
+.product {
+    position: relative;
+    margin-top: 10rem;
+}
+
+.frame {
+    border: 5px solid #56cce2;
+    mix-blend-mode: multiply;
+    height: 12rem;
+    max-width: 8rem;
+    padding: 1rem;
+
+    p {
+        line-height: 1.2rem;
+        font-size: 1.1rem;
+    }
+}
+
+
+// .margin-left {
+//     margin-left: 5rem;
+//     animation: all 1s ease-in;
+// }
+
+.germany {
+    background-image: url(../assets/birne.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: #fff7ee;
+    opacity: .85;
+    height: 18rem;
+    width: 100%;
+    position: absolute;
+    top: 100;
 }
 
 
