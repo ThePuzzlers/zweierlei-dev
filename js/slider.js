@@ -3,38 +3,51 @@ const slider = document.getElementsByClassName('slider');
 const menuOne = document.getElementsByClassName('menu-one');
 const menuTwo = document.getElementsByClassName('menu-two');
 const menuThree = document.getElementsByClassName('menu-three');
-const germany = document.getElementsByClassName('germany');
+const germany = document.getElementById('germany');
 
-const product = document.getElementById('pear');
+const menuOneFrame = document.getElementById('pear');
 
 
 
-slider['0'].addEventListener('click', event => {
-    if (event.target.className || event.target.parentElement.className || event.target.parentElement.parentElement.className === "menu-one") {
+menuOne['0'].onclick = function (event) {
+
         menuOne['0'].style.width = '70%';
         menuTwo['0'].style.width = '15%';
         menuThree['0'].style.width = '15%';
-        pear.style.marginLeft = '10rem';
-        pear.style.transition = 'margin-left 1s ease-out';
-        germany['0'].style.height = '25rem';
-        germany['0'].style.transition = 'height 1s ease-out';  
-        console.log(event);
+
+        menuOneFrame.classList.add("margin-left");
+        germany.classList.add("grow-img");
         
-    
-    } else if (event.target.className || event.target.parentElement.className || event.target.parentElement.parentElement.className === "menu-two") {
+
+    console.log('menu one is clicked');
+};
+
+menuTwo['0'].onclick = function (event) {
+
         menuOne['0'].style.width = '15%';
         menuTwo['0'].style.width = '70%';
         menuThree['0'].style.width = '15%';
-        pear.style.marginLeft = '1rem';
-        pear.style.transition = 'margin-left 1s ease-out';
-        germany['0'].style.height = '18rem';
-        germany['0'].style.transition = 'height 1s ease-out';
-    } else if (event.target.className || event.target.parentElement.className || event.target.parentElement.parentElement.className === "menu-three") {
+
+        menuOneFrame.classList.remove("margin-left");
+        germany.classList.remove("grow-img");
+        
+    
+        console.log('menu two is clicked');
+};
+
+menuThree['0'].onclick = function (event) {
+
         menuOne['0'].style.width = '15%';
         menuTwo['0'].style.width = '15%';
         menuThree['0'].style.width = '70%';
-    }
-});
+
+        menuOneFrame.classList.remove("margin-left");
+        germany.classList.remove("grow-img");
+        
+        
+    
+        console.log('menu three is clicked');
+};
 
 
 // function checkCard(event) {

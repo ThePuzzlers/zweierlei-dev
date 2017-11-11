@@ -7,14 +7,15 @@
     background-color: darkgrey;
         
         .menu-one {
+            display: flex;
             background-color: #fff7ee;
-            width: 15%;
+            width: 70%;
             transition: width 1s ease;
         }
 
         .menu-two {
             background-color: lightgray;
-            width: 70%;  
+            width: 15%;  
             transition: width 1s ease;            
         }
 
@@ -23,11 +24,32 @@
             width: 15%;  
             transition: width 1s ease;            
         }
+
+        .menu {
+            max-width: 20rem;
+            margin: 10rem 0 0 7rem;
+
+            li {
+                margin-bottom: 2rem;
+
+                h3 {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    margin-bottom: .4rem;
+                }
+
+                p {
+                    line-height: 1.4rem;
+                }
+            }
+        }
 }
 
 .product {
     position: relative;
     margin-top: 10rem;
+    margin-left: 2rem;
+    transition: margin-left .6s ease-in-out;  
 }
 
 .frame {
@@ -44,22 +66,32 @@
 }
 
 
-// .margin-left {
-//     margin-left: 5rem;
-//     animation: all 1s ease-in;
-// }
+.margin-left {
+    margin-left: 10rem;
+    transition: all .6s ease-in-out;
+}
 
-.germany {
+.frame-img {
+    opacity: .85;
+    height: 15rem;
+    width: 10rem;
+    position: absolute;
+    top: 100;
+    transition: all .6s ease-in-out;    
+}
+
+#germany {
     background-image: url(../assets/birne.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-color: #fff7ee;
-    opacity: .85;
-    height: 18rem;
-    width: 100%;
-    position: absolute;
-    top: 100;
+}
+
+.grow-img {
+    width: 14rem;
+    height: 25rem;
+    transition: all .6s ease-in-out;
 }
 
 
