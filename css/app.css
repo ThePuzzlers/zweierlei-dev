@@ -107,9 +107,12 @@ footer {
     width: 70%;
     transition: width 1s ease; }
   .slider .menu-two {
-    background-color: lightgray;
+    display: flex;
+    background-color: #beefe4;
     width: 15%;
     transition: width 1s ease; }
+    .slider .menu-two .menu {
+      display: none; }
   .slider .menu-three {
     background-color: darkgrey;
     width: 15%;
@@ -132,8 +135,19 @@ footer {
   margin-left: 2rem;
   transition: margin-left .6s ease-in-out; }
 
+.product {
+  position: relative;
+  margin-top: 10rem;
+  margin-left: 2rem;
+  transition: margin-left .6s ease-in-out; }
+
+.blue {
+  border: 5px solid #56cce2; }
+
+.pink {
+  border: 5px solid #c4486c; }
+
 .frame {
-  border: 5px solid #56cce2;
   mix-blend-mode: multiply;
   height: 12rem;
   max-width: 8rem;
@@ -149,9 +163,7 @@ footer {
 .frame-img {
   opacity: .85;
   height: 15rem;
-  width: 10rem;
   position: absolute;
-  top: 100;
   transition: all .6s ease-in-out; }
 
 #germany {
@@ -159,10 +171,21 @@ footer {
   background-size: contain;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
-  background-color: #fff7ee; }
+  background-color: transparent;
+  width: 10rem;
+  top: 100; }
+
+#europe {
+  background-image: url(../assets/octopus.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: transparent;
+  width: 100%;
+  top: 100; }
 
 .grow-img {
-  width: 14rem;
+  width: 14rem !important;
   height: 25rem;
   transition: all .6s ease-in-out; }
 

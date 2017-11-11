@@ -5,7 +5,7 @@ const menuTwo = document.getElementsByClassName('menu-two');
 const menuThree = document.getElementsByClassName('menu-three');
 const germany = document.getElementById('germany');
 
-const menuOneFrame = document.getElementById('pear');
+const menuOneFrame = document.getElementById('menu-one-frame');
 
 
 
