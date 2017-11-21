@@ -100,7 +100,8 @@ footer {
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: darkgrey; }
+  background-color: darkgrey;
+  overflow: hidden; }
   .slider .menu-one {
     display: flex;
     background-color: #fff7ee;
@@ -111,12 +112,13 @@ footer {
     background-color: #beefe4;
     width: 15%;
     transition: width 1s ease; }
-    .slider .menu-two .menu {
-      display: none; }
   .slider .menu-three {
     background-color: darkgrey;
     width: 15%;
     transition: width 1s ease; }
+  .slider #menu-germany {
+    opacity: 0;
+    transition: all .2s ease-in; }
   .slider .menu {
     max-width: 20rem;
     margin: 10rem 0 0 7rem; }
@@ -135,7 +137,7 @@ footer {
   margin-left: 2rem;
   transition: margin-left .6s ease-in-out; }
 
-.product {
+.product-two {
   position: relative;
   margin-top: 10rem;
   margin-left: 2rem;
@@ -177,7 +179,7 @@ footer {
 
 #europe {
   background-image: url(../assets/octopus.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   background-color: transparent;
@@ -188,5 +190,9 @@ footer {
   width: 14rem !important;
   height: 25rem;
   transition: all .6s ease-in-out; }
+
+.fade-in {
+  opacity: 1 !important;
+  transition: all .2s ease-in .3s !important; }
 
 /*# sourceMappingURL=app.css.map */

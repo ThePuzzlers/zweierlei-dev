@@ -4,6 +4,8 @@ const menuOne = document.getElementsByClassName('menu-one');
 const menuTwo = document.getElementsByClassName('menu-two');
 const menuThree = document.getElementsByClassName('menu-three');
 const germany = document.getElementById('germany');
+const menuGermany = document.getElementById('menu-germany');
+
 
 const menuOneFrame = document.getElementById('menu-one-frame');
 
@@ -17,6 +19,7 @@ menuOne['0'].onclick = function (event) {
 
         menuOneFrame.classList.add("margin-left");
         germany.classList.add("grow-img");
+        menuGermany.classList.add("fade-in");        
         
 
     console.log('menu one is clicked');
@@ -30,6 +33,7 @@ menuTwo['0'].onclick = function (event) {
 
         menuOneFrame.classList.remove("margin-left");
         germany.classList.remove("grow-img");
+        menuGermany.classList.remove("fade-in");                
         
     
         console.log('menu two is clicked');

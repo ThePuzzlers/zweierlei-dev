@@ -5,6 +5,7 @@
     height: 100vh;
     display: flex;
     background-color: darkgrey;
+    overflow: hidden;
         
         .menu-one {
             display: flex;
@@ -18,16 +19,17 @@
             background-color: #beefe4;
             width: 15%;  
             transition: width 1s ease;  
-            
-            .menu {
-                display: none;
-            }
         }
 
         .menu-three {
             background-color: darkgrey;
             width: 15%;  
             transition: width 1s ease;            
+        }
+
+        #menu-germany {
+            opacity: 0;
+            transition: all .2s ease-in;
         }
 
         .menu {
@@ -58,7 +60,7 @@
 }
 
 
-.product {
+.product-two {
     position: relative;
     margin-top: 10rem;
     margin-left: 2rem;
@@ -111,7 +113,7 @@
 
 #europe {
     background-image: url(../assets/octopus.png);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-color: transparent;
@@ -119,10 +121,18 @@
     top: 100;  
 }
 
+
+// for the js .add class function
+
 .grow-img {
     width: 14rem !important;
     height: 25rem;
     transition: all .6s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1 !important;
+    transition: all .2s ease-in .3s !important;
 }
 
 
