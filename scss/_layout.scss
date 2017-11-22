@@ -7,6 +7,94 @@ a {
     color: #c24a6c;
 }
 
+
+
+.grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5vh 95vh;
+    grid-template-areas: 
+    "navigation navigation navigation" 
+    "stage stage stage";
+}
+
+
+
+
+
+nav {
+    grid-area: navigation;
+    position: absolute;
+    font-size: .8rem;
+    width: 100%;
+
+    ul {
+        width: 80%;
+        margin: 0 auto;
+        height: 5vh;        
+        display: flex;
+        align-items: center;
+
+        li {
+            flex-grow: 1;
+            text-align: center;
+        }
+    }
+}
+
+.stage {
+    grid-area: stage;  
+    overflow: scroll;      
+
+    .wrapper {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        height: 95vh;
+
+  
+                .logo-container {
+                    width: 50%;
+                    background: url(../assets/zweierlei-restaurant-duesseldorf-logo-complete.svg) center no-repeat;
+                    background-size: contain;
+                    align-self: center;            
+                    height: 30rem;
+                }
+        
+                .text-start {
+                    align-self: center;                    
+                    width: 50%;
+        
+                    h3 {
+                        padding-top: 1rem;
+                        padding-left: .5rem;
+                    }
+                }
+            
+
+
+                .img-container {
+                    width: 50%;
+                    background: url(../assets/benni-und-hagen-restaurant-zweierlei-duesseldorf.jpg) center no-repeat;
+                    background-size: contain;
+                    height: 30rem;
+                }
+
+                .text-zwei {
+                    width: 50%;
+                }
+            
+
+
+    }
+}
+
+
+
+
+
+// temporary page
 .container {
     height: 100vh;
     display: grid;
@@ -25,6 +113,8 @@ a {
             height: auto;
         }
 }
+
+
 
 .logo {
     background-image: $logo-complete;
