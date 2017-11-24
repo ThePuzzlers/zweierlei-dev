@@ -33,11 +33,10 @@ nav {
       text-align: center; }
 
 .stage {
-  grid-area: stage;
-  overflow: scroll; }
+  grid-area: stage; }
   .stage .wrapper {
     display: flex;
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
     height: 95vh; }
     .stage .wrapper .logo-container {
@@ -53,16 +52,33 @@ nav {
         padding-top: 1rem;
         padding-left: .5rem; }
     .stage .wrapper .img-container {
-      width: 50%;
-      background: url(../assets/benni-und-hagen-restaurant-zweierlei-duesseldorf.jpg) center no-repeat;
-      background-size: cover;
-      height: 30rem;
-      box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.5); }
+      height: 70%;
+      width: 100%;
+      margin-top: 4rem; }
+      .stage .wrapper .img-container .img-about {
+        height: 50%;
+        width: 50%;
+        background: url(../assets/benni-und-hagen-restaurant-zweierlei-duesseldorf.jpg) center no-repeat;
+        background-size: cover;
+        height: 30rem;
+        box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.5);
+        margin-left: auto; }
+      .stage .wrapper .img-container .frame {
+        margin: -5rem auto 0 auto;
+        display: flex;
+        max-width: 12rem; }
+        .stage .wrapper .img-container .frame p {
+          align-self: end;
+          font-size: 1.8rem;
+          font-weight: 700;
+          line-height: 1.7rem; }
     .stage .wrapper .text-zwei {
-      width: 50%;
-      padding: 10rem 12rem 0 0;
-      font-size: .9rem;
-      line-height: 1.2rem; }
+      width: 40%;
+      font-size: 1.2rem;
+      line-height: 1.7rem; }
+
+#zwei {
+  display: block; }
 
 .container {
   height: 100vh;
