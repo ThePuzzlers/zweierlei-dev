@@ -52,6 +52,8 @@
         }
 }
 
+
+
 .product {
     position: relative;
     margin-top: 10rem;
@@ -74,6 +76,10 @@
 
 .pink {
     border: 5px solid #c4486c;        
+}
+
+.green {
+    border: 5px solid $green;        
 }
 
 .frame {

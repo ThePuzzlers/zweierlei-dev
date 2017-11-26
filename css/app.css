@@ -5,15 +5,17 @@ h2 {
   font-weight: 700; }
 
 .menu {
-  max-width: 20rem;
-  margin: 0rem 0 0 0rem; }
+  text-align: center;
+  width: 70%;
+  margin: 0rem auto 0 auto; }
   .menu li {
     margin-bottom: 2rem; }
     .menu li h3 {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 600;
       margin-bottom: .4rem; }
     .menu li p {
+      font-size: .8rem;
       line-height: 1.4rem; }
 
 html {
@@ -23,10 +25,9 @@ a {
   color: #c24a6c; }
 
 .grid-container {
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 5vh 95vh;
+  grid-template-rows: 5vh 100%;
   grid-template-areas: "navigation navigation navigation"  "stage stage stage"; }
 
 nav {
@@ -47,26 +48,51 @@ nav {
       text-align: center; }
 
 .stage {
-  grid-area: stage; }
+  grid-area: stage;
+  overflow: hidden; }
   .stage .wrapper {
     display: flex;
     width: 70%;
     margin: 0 auto;
     height: 95vh; }
+    @media screen and (max-width: 768px) {
+      .stage .wrapper {
+        width: 80%; } }
+    @media screen and (max-width: 500px) {
+      .stage .wrapper {
+        width: 90%;
+        flex-wrap: wrap; } }
     .stage .wrapper .logo-container {
       width: 50%;
       background: url(../assets/zweierlei-restaurant-duesseldorf-logo-complete.svg) center no-repeat;
       background-size: contain;
       align-self: center;
       height: 30rem; }
+      @media screen and (max-width: 768px) {
+        .stage .wrapper .logo-container {
+          margin: 0 auto 0 auto;
+          height: 20rem; } }
+      @media screen and (max-width: 500px) {
+        .stage .wrapper .logo-container {
+          height: 15rem; } }
     .stage .wrapper .text-start {
       align-self: center;
       width: 50%; }
+      @media screen and (max-width: 500px) {
+        .stage .wrapper .text-start {
+          text-align: center;
+          width: 100%;
+          align-self: flex-start; } }
       .stage .wrapper .text-start h3 {
         padding-top: 1rem;
         padding-left: .5rem; }
+        @media screen and (max-width: 768px) {
+          .stage .wrapper .text-start h3 {
+            padding-left: 0; } }
+      @media screen and (max-width: 768px) {
+        .stage .wrapper .text-start h2 {
+          font-size: 1.8rem; } }
     .stage .wrapper .img-container {
-      height: 70%;
       width: 100%;
       margin-top: 4rem;
       grid-area: portrait-img; }
@@ -78,24 +104,33 @@ nav {
         height: 30rem;
         box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.5);
         margin-left: auto; }
+        @media screen and (max-width: 768px) {
+          .stage .wrapper .img-container .img-about {
+            width: 80%; } }
+        @media screen and (max-width: 500px) {
+          .stage .wrapper .img-container .img-about {
+            width: 100%; } }
       .stage .wrapper .img-container .frame {
         margin: -5rem auto 0 auto;
         display: flex;
         max-width: 12rem; }
         .stage .wrapper .img-container .frame p {
-          align-self: end;
+          align-self: flex-end;
           font-size: 1.8rem;
           font-weight: 700;
           line-height: 1.7rem; }
     .stage .wrapper .text-zwei {
       grid-area: about;
-      font-size: 1.2rem;
+      font-size: .8rem;
       line-height: 1.7rem; }
     .stage .wrapper .signatures {
       grid-area: signatures;
       display: grid; }
       .stage .wrapper .signatures .signature {
         height: 6rem; }
+        @media screen and (max-width: 768px) {
+          .stage .wrapper .signatures .signature {
+            height: 5rem; } }
       .stage .wrapper .signatures .benni {
         background: url(../assets/benni-signature-pink.svg) center no-repeat;
         background-size: contain;
@@ -104,6 +139,14 @@ nav {
         background: url(../assets/hagen-signature-blue.svg) center no-repeat;
         background-size: contain;
         align-self: flex-start; }
+  .stage .full {
+    width: 100%; }
+  .stage .quote {
+    height: 50vh; }
+    .stage .quote h3 {
+      text-align: center;
+      line-height: 2.4rem;
+      font-size: 2rem; }
 
 #zwei {
   display: grid;
@@ -111,72 +154,205 @@ nav {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 10rem;
   grid-template-areas: "portrait-img portrait-img" "about signatures" "nothing nothing"; }
+  @media screen and (max-width: 500px) {
+    #zwei {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 20rem 1fr 10rem;
+      grid-template-areas: "portrait-img" "signatures"             "about" "nothing"; } }
 
-#menu-deutschland, #menu-europa {
-  background-color: #fef7ee;
+#menus {
   display: grid;
-  min-height: 100vh;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "menu-img menu-text"; }
-  #menu-deutschland .img-container, #menu-europa .img-container {
-    grid-area: menu-img; }
-    #menu-deutschland .img-container .frame, #menu-europa .img-container .frame {
-      margin: 0 auto 0 auto;
-      display: flex;
-      max-width: 12rem;
-      height: 18rem; }
-      #menu-deutschland .img-container .frame p, #menu-europa .img-container .frame p {
-        align-self: start;
-        font-size: 1.8rem;
-        font-weight: 700;
-        line-height: 1.7rem; }
-    #menu-deutschland .img-container .img-pear, #menu-europa .img-container .img-pear {
-      margin: -8rem 0 0 0;
-      background: url(../assets/birne.png) center no-repeat;
-      background-size: contain;
-      background-blend-mode: multiply;
-      background-color: transparent;
-      height: 18rem; }
-  #menu-deutschland .menu, #menu-europa .menu {
-    grid-area: menu-text;
-    padding-top: 15rem; }
+  height: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "menu-deutschland menu-europa menu-veggie" "menu-deutschland menu-europa menu-veggie"; }
+  @media screen and (max-width: 768px) {
+    #menus {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "menu-deutschland" "menu-europa" "menu-veggie"; } }
+  #menus .menu-deutschland, #menus .menu-europa, #menus .menu-veggie {
+    grid-area: menu-deutschland;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "frame" "menu-text"; }
+    @media screen and (max-width: 768px) {
+      #menus .menu-deutschland, #menus .menu-europa, #menus .menu-veggie {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "frame menu-text";
+        height: 40rem; } }
+    @media screen and (max-width: 768px) {
+      #menus .menu-deutschland, #menus .menu-europa, #menus .menu-veggie {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "frame"  "menu-text";
+        height: auto; } }
+    #menus .menu-deutschland .img-container, #menus .menu-europa .img-container, #menus .menu-veggie .img-container {
+      grid-area: frame; }
+      #menus .menu-deutschland .img-container .frame, #menus .menu-europa .img-container .frame, #menus .menu-veggie .img-container .frame {
+        margin: -5rem auto 0 auto;
+        display: flex;
+        max-width: 12rem;
+        height: 18rem; }
+        #menus .menu-deutschland .img-container .frame p, #menus .menu-europa .img-container .frame p, #menus .menu-veggie .img-container .frame p {
+          align-self: flex-end;
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 1.7rem; }
+      #menus .menu-deutschland .img-container .img-germany, #menus .menu-europa .img-container .img-germany, #menus .menu-veggie .img-container .img-germany {
+        margin: 0 0 0 0;
+        background: url(../assets/germany-img.jpg) center no-repeat;
+        background-size: contain;
+        background-blend-mode: multiply;
+        background-color: transparent;
+        height: 18rem; }
+    #menus .menu-deutschland .menu, #menus .menu-europa .menu, #menus .menu-veggie .menu {
+      grid-area: menu-text; }
+      @media screen and (max-width: 768px) {
+        #menus .menu-deutschland .menu, #menus .menu-europa .menu, #menus .menu-veggie .menu {
+          padding-top: 2rem; } }
+  #menus .menu-europa {
+    grid-area: menu-europa;
+    grid-template-areas: "menu-text" "frame";
+    padding-top: 20rem; }
+    @media screen and (max-width: 768px) {
+      #menus .menu-europa {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "menu-text frame";
+        padding-top: 2rem; } }
+    @media screen and (max-width: 768px) {
+      #menus .menu-europa {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "frame"  "menu-text";
+        height: auto; } }
+    #menus .menu-europa .img-container {
+      grid-area: frame; }
+      #menus .menu-europa .img-container .frame {
+        margin: 0 auto 0 auto;
+        display: flex;
+        max-width: 12rem;
+        height: 18rem; }
+        #menus .menu-europa .img-container .frame p {
+          align-self: start;
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 1.7rem; }
+      #menus .menu-europa .img-container .img-europe {
+        margin: -8rem 0 0 0;
+        background: url(../assets/europa-img.jpg) center no-repeat;
+        background-size: contain;
+        background-blend-mode: multiply;
+        background-color: transparent;
+        height: 18rem; }
+    #menus .menu-europa .menu {
+      grid-area: menu-text;
+      padding-top: 2rem; }
+  #menus .menu-veggie {
+    grid-area: menu-veggie;
+    grid-template-areas: "frame" "menu-text";
+    padding-top: 10rem; }
+    @media screen and (max-width: 768px) {
+      #menus .menu-veggie {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "frame menu-text";
+        padding-top: 2rem; } }
+    @media screen and (max-width: 768px) {
+      #menus .menu-veggie {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "frame"  "menu-text";
+        height: auto; } }
+    #menus .menu-veggie .img-container {
+      grid-area: frame; }
+      #menus .menu-veggie .img-container .frame {
+        margin: 0 auto 0 auto;
+        display: flex;
+        max-width: 12rem;
+        height: 18rem; }
+        #menus .menu-veggie .img-container .frame p {
+          align-self: start;
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 1.7rem; }
+      #menus .menu-veggie .img-container .img-vegetables {
+        margin: -8rem 0 0 0;
+        background: url(../assets/vegetables-img.jpg) center no-repeat;
+        background-size: contain;
+        background-blend-mode: multiply;
+        background-color: transparent;
+        height: 18rem; }
+    #menus .menu-veggie .menu {
+      grid-area: menu-text;
+      padding-top: 2rem; }
 
-#menu-europa {
-  background-color: #dbf0fa;
-  grid-template-areas: "menu-text menu-img"; }
-  #menu-europa .img-container {
-    grid-area: menu-img; }
-    #menu-europa .img-container .frame {
-      margin: 0 auto 0 auto;
+#contact {
+  display: grid;
+  height: 100vh;
+  padding-top: 10rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "map contact" "map contact"; }
+  @media screen and (max-width: 768px) {
+    #contact {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "contact" "map"; } }
+  @media screen and (max-width: 768px) {
+    #contact {
+      padding: 0; } }
+  #contact .img-container {
+    width: 100%;
+    margin-top: 4rem;
+    grid-area: map; }
+    #contact .img-container .img-about {
+      height: 50%;
+      width: 100%;
+      background: url(../assets/benni-und-hagen-restaurant-zweierlei-duesseldorf.jpg) center no-repeat;
+      background-size: cover;
+      height: 30rem;
+      box-shadow: 0 8px 35px 0 rgba(0, 0, 0, 0.5);
+      margin-left: auto; }
+    #contact .img-container .frame {
+      margin: -5rem auto 0 auto;
       display: flex;
-      max-width: 12rem;
-      height: 18rem; }
-      #menu-europa .img-container .frame p {
-        align-self: start;
+      max-width: 12rem; }
+      #contact .img-container .frame p {
+        align-self: flex-end;
         font-size: 1.8rem;
         font-weight: 700;
         line-height: 1.7rem; }
-    #menu-europa .img-container .img-pear {
-      margin: -8rem 0 0 0;
-      background: url(../assets/birne.png) center no-repeat;
-      background-size: contain;
-      background-blend-mode: multiply;
-      background-color: transparent;
-      height: 18rem; }
-  #menu-europa .menu {
-    grid-area: menu-text;
-    padding-top: 15rem; }
+  #contact .text-contact {
+    grid-area: contact;
+    padding: 5rem 0 0 2rem;
+    font-size: .8rem;
+    line-height: 1.7rem; }
+    @media screen and (max-width: 768px) {
+      #contact .text-contact {
+        padding: 0 0 0 0; } }
+
+.wrapper-right {
+  margin: 0 0 0 auto;
+  width: 100%;
+  min-height: 95vh;
+  position: relative; }
+
+.wrapper-top {
+  margin: 0 0 0 auto;
+  width: 100%;
+  min-height: 95vh;
+  position: relative; }
 
 .color-wrap {
   width: 100%;
   height: auto; }
 
-#beige {
-  background-color: #fef7ee; }
-
-#blue {
-  background-color: #dbf0fa; }
+.beige {
+  border: 5px solid #c48255; }
 
 .space {
   grid-area: nothing; }
@@ -233,6 +409,9 @@ nav {
 
 .pink {
   border: 5px solid #c4486c; }
+
+.green {
+  border: 5px solid #beefe4; }
 
 .frame {
   mix-blend-mode: multiply;

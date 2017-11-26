@@ -10,14 +10,14 @@ a {
 
 
 .grid-container {
-    height: 100vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 5vh 95vh;
+    grid-template-rows: 5vh 100%;
     grid-template-areas: 
     "navigation navigation navigation" 
     "stage stage stage";
 }
+
 
 
 
@@ -47,12 +47,24 @@ nav {
 
 .stage {
     grid-area: stage; 
+    overflow: hidden;
 
     .wrapper {
         display: flex;
         width: 70%;
         margin: 0 auto;
         height: 95vh;
+
+            @media screen and (max-width: $tablet-portrait-break) {
+                width: 80%;
+            }
+
+            @media screen and (max-width: $phone-portrait-break) {
+                width: 90%;
+                flex-wrap: wrap;
+            }
+
+            
 
   
                 .logo-container {
@@ -61,15 +73,41 @@ nav {
                     background-size: contain;
                     align-self: center;            
                     height: 30rem;
+
+                        @media screen and (max-width: $tablet-portrait-break) {
+                            margin: 0 auto 0 auto;
+                            height: 20rem;
+                        }
+
+                        @media screen and (max-width: $phone-portrait-break) {
+                            height: 15rem;                            
+                        }
                 }
         
                 .text-start {
                     align-self: center;                    
                     width: 50%;
+
+                    @media screen and (max-width: $phone-portrait-break) {
+                        text-align: center;
+                        width: 100%;
+                        align-self: flex-start;
+                    }
         
                     h3 {
                         padding-top: 1rem;
                         padding-left: .5rem;
+
+                        @media screen and (max-width: $tablet-portrait-break) {
+                            padding-left: 0;                            
+                        }
+                    }
+
+                    @media screen and (max-width: $tablet-portrait-break) {
+
+                        h2 {
+                            font-size: 1.8rem;                            
+                        }
                     }
                 }
             
@@ -77,7 +115,6 @@ nav {
 
                 .img-container {
 
-                    height: 70%;
                     width: 100%;
                     margin-top: 4rem;
                     grid-area: portrait-img;
@@ -90,6 +127,14 @@ nav {
                         height: 30rem;
                         box-shadow: 0 8px 35px 0 rgba(0,0,0,0.50);
                         margin-left: auto;
+
+                            @media screen and (max-width: $tablet-portrait-break) {
+                                width: 80%;
+                            }
+
+                            @media screen and (max-width: $phone-portrait-break) {
+                                width: 100%;
+                            }
                     }
 
                     .frame {
@@ -98,7 +143,7 @@ nav {
                         max-width: 12rem;
 
                         p {
-                            align-self: end;
+                            align-self: flex-end;
                             font-size: 1.8rem;
                             font-weight: 700;
                             line-height: 1.7rem;
@@ -108,7 +153,7 @@ nav {
 
                 .text-zwei {
                     grid-area: about;
-                    font-size: 1.2rem;
+                    font-size: .8rem;
                     line-height: 1.7rem;
                 }
 
@@ -118,6 +163,10 @@ nav {
                     
                     .signature {
                         height: 6rem;
+
+                        @media screen and (max-width: $tablet-portrait-break) {
+                            height: 5rem;
+                        }
                     }
 
                     .benni {
@@ -133,7 +182,23 @@ nav {
                 }
 
     }
+
+    .full {
+        width: 100%;
+    }
+
+    .quote {
+        height: 50vh;
+
+        h3 {
+            text-align: center;
+            line-height: 2.4rem;
+            font-size: 2rem;
+        }
+    }
 }
+
+
 
 #zwei {
     display: grid;
@@ -144,97 +209,418 @@ nav {
     "portrait-img portrait-img"
     "about signatures"
     "nothing nothing";
+
+        @media screen and (max-width: $phone-portrait-break) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 20rem 1fr 10rem;
+            grid-template-areas: 
+            "portrait-img"
+            "signatures"            
+            "about"
+            "nothing";
+        }
 }
 
 
 
-
-#menu-deutschland {
-    background-color: #fef7ee;
+#menus {
     display: grid;
-    min-height: 100vh;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "menu-deutschland menu-europa menu-veggie"
+    "menu-deutschland menu-europa menu-veggie";
+
+        @media screen and (max-width: $tablet-portrait-break) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: 
+            "menu-deutschland"
+            "menu-europa"
+            "menu-veggie";
+        }
+
+
+    .menu-deutschland {
+        grid-area: menu-deutschland;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "frame"
+        "menu-text";
+
+            @media screen and (max-width: $tablet-portrait-break) {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-template-areas: 
+                "frame menu-text";
+                height: 40rem;
+            }
+
+            @media screen and (max-width: $tablet-portrait-break) {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-template-areas: 
+                "frame" 
+                "menu-text";
+                height: auto;
+            }
+
+            
+
+            .img-container {
+                grid-area: frame;
+
+                .frame {
+                    margin: -5rem auto 0 auto;
+                    display: flex;
+                    max-width: 12rem;
+                    height: 18rem;
+        
+                    p {
+                        align-self: flex-end;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        line-height: 1.7rem;
+                    }
+                }
+        
+                .img-germany {
+                    margin: 0 0 0 0;
+                    background: url(../assets/germany-img.jpg) center no-repeat;
+                    @include background-img;
+                    height: 18rem;
+                }
+            }
+
+            .menu {
+                grid-area: menu-text;
+
+                @media screen and (max-width: $tablet-portrait-break) {
+                    padding-top: 2rem;
+                }                    
+            }
+    }
+
+    .menu-europa {
+        @extend .menu-deutschland;
+        grid-area: menu-europa;
+        grid-template-areas: 
+        "menu-text"
+        "frame"; 
+        padding-top: 20rem;
+        
+            @media screen and (max-width: $tablet-portrait-break) {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-template-areas: 
+                "menu-text frame";
+                padding-top: 2rem;
+            }
+
+            @media screen and (max-width: $tablet-portrait-break) {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-template-areas: 
+                "frame" 
+                "menu-text";
+                height: auto;
+            }
+
+        .img-container {
+            grid-area: frame;
+
+            .frame {
+                margin: 0 auto 0 auto;
+                display: flex;
+                max-width: 12rem;
+                height: 18rem;
+    
+                p {
+                    align-self: start;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    line-height: 1.7rem;
+                }
+            }
+    
+            .img-europe {
+                margin: -8rem 0 0 0;
+                background: url(../assets/europa-img.jpg) center no-repeat;
+                @include background-img;
+                height: 18rem;
+            }
+        }
+
+        .menu {
+            grid-area: menu-text;
+            padding-top: 2rem;
+        }   
+    }
+
+
+
+
+
+    .menu-veggie {
+        @extend .menu-deutschland;        
+        grid-area: menu-veggie;
+        grid-template-areas: 
+        "frame"
+        "menu-text";
+        padding-top: 10rem;
+
+            @media screen and (max-width: $tablet-portrait-break) {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-template-areas: 
+                "frame menu-text";
+                padding-top: 2rem;
+            }
+
+            @media screen and (max-width: $tablet-portrait-break) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+            "frame" 
+            "menu-text";
+            height: auto;
+        }
+
+        .img-container {
+            grid-area: frame;
+
+            .frame {
+                margin: 0 auto 0 auto;
+                display: flex;
+                max-width: 12rem;
+                height: 18rem;
+    
+                p {
+                    align-self: start;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    line-height: 1.7rem;
+                }
+            }
+    
+            .img-vegetables {
+                margin: -8rem 0 0 0;
+                background: url(../assets/vegetables-img.jpg) center no-repeat;
+                @include background-img;
+                height: 18rem;
+            }
+        }
+
+        .menu {
+            grid-area: menu-text;
+            padding-top: 2rem;
+        }        
+    }
+}
+
+
+
+#contact {
+    display: grid;
+    height: 100vh;
+    padding-top: 10rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
-    "menu-img menu-text";
+    "map contact"
+    "map contact";
+
+        @media screen and (max-width: $tablet-portrait-break) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+            "contact"
+            "map";
+        }
+
+        @media screen and (max-width: $tablet-portrait-break) {
+            padding: 0;       
+        }
+
 
     .img-container {
-        grid-area: menu-img;
-    
+        
+        width: 100%;
+        margin-top: 4rem;
+        grid-area: map;
+
+        .img-about {
+            height: 50%;
+            width: 100%;
+            background: url(../assets/benni-und-hagen-restaurant-zweierlei-duesseldorf.jpg) center no-repeat;
+            background-size: cover;
+            height: 30rem;
+            box-shadow: 0 8px 35px 0 rgba(0,0,0,0.50);
+            margin-left: auto;
+        }
 
         .frame {
-            margin: 0 auto 0 auto;
+            margin: -5rem auto 0 auto;
             display: flex;
             max-width: 12rem;
-            height: 18rem;
 
             p {
-                align-self: start;
+                align-self: flex-end;
                 font-size: 1.8rem;
                 font-weight: 700;
                 line-height: 1.7rem;
             }
         }
-
-        .img-pear {
-            margin: -8rem 0 0 0;
-            background: url(../assets/birne.png) center no-repeat;
-            background-size: contain;
-            background-blend-mode: multiply;
-            background-color: transparent;
-            height: 18rem;
-        }
     }
 
+    .text-contact {
+        grid-area: contact;
+        padding: 5rem 0 0 2rem;
+        font-size: .8rem;
+        line-height: 1.7rem;
 
-    .menu {
-        grid-area: menu-text;
-        padding-top: 15rem;
+        @media screen and (max-width: $tablet-portrait-break) {
+            padding: 0 0 0 0;       
+        }
     }
 }
 
 
 
-#menu-europa {
-    @extend #menu-deutschland;
-    background-color: #dbf0fa;
-    grid-template-areas: 
-    "menu-text menu-img";
 
-    .img-container {
-        grid-area: menu-img;
+
+
+
+
+
+
+
+
+// #menu-deutschland {
+//     background-color: #fef7ee;
+//     display: grid;
+//     min-height: 100vh;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: 1fr;
+//     grid-template-areas: 
+//     "menu-img menu-text";
+
+//     .img-container {
+//         grid-area: menu-img;
     
 
-        .frame {
-            margin: 0 auto 0 auto;
-            display: flex;
-            max-width: 12rem;
-            height: 18rem;
+//         .frame {
+//             margin: 0 auto 0 auto;
+//             display: flex;
+//             max-width: 12rem;
+//             height: 18rem;
 
-            p {
-                align-self: start;
-                font-size: 1.8rem;
-                font-weight: 700;
-                line-height: 1.7rem;
-            }
-        }
+//             p {
+//                 align-self: start;
+//                 font-size: 1.8rem;
+//                 font-weight: 700;
+//                 line-height: 1.7rem;
+//             }
+//         }
 
-        .img-pear {
-            margin: -8rem 0 0 0;
-            background: url(../assets/birne.png) center no-repeat;
-            background-size: contain;
-            background-blend-mode: multiply;
-            background-color: transparent;
-            height: 18rem;
-        }
-    }
+//         .img-pear {
+//             margin: -8rem 0 0 0;
+//             background: url(../assets/birne.png) center no-repeat;
+//             background-size: contain;
+//             background-blend-mode: multiply;
+//             background-color: transparent;
+//             height: 18rem;
+//         }
+//     }
 
 
-    .menu {
-        grid-area: menu-text;
-        padding-top: 15rem;
-    }
+//     .menu {
+//         grid-area: menu-text;
+//         padding-top: 15rem;
+//     }
+// }
+
+
+.wrapper-right {
+    margin: 0 0 0 auto;
+    width: 100%;
+    min-height: 95vh;
+    position: relative;
 }
+
+
+// #menu-europa {
+//     @extend #menu-deutschland;
+//     background-color: #dbf0fa;
+//     grid-template-areas: 
+//     "menu-text menu-img";
+
+//     .img-container {
+//         grid-area: menu-img;
+//         align-self: center;
+
+
+//         .img-octopus {
+//             background: url(../assets/octopus.png) right no-repeat;
+//             background-size: contain;
+//             background-blend-mode: multiply;
+//             background-color: transparent;
+//             height: 55rem;
+//             width: 50%;
+//             position: absolute;
+//             bottom: 0;
+//         }
+//     }
+
+//     .menu {
+//         grid-area: menu-text;
+//         padding: 15rem 0 0 30%;
+//     }
+// }
+
+
+
+
+
+.wrapper-top {
+    margin: 0 0 0 auto;
+    width: 100%;
+    min-height: 95vh;
+    position: relative;
+}
+
+
+// #menu-veggie {
+//     @extend #menu-deutschland;
+//     background-color: #beefe4;
+//     grid-template-areas: 
+//     "menu-img menu-text";
+
+//     .img-container {
+//         grid-area: menu-img;
+//         align-self: center;
+
+
+//         .img-carrots {
+//             background: url(../assets/carrots.png) top no-repeat;
+//             background-size: contain;
+//             background-blend-mode: multiply;
+//             background-color: transparent;
+//             height: 58rem;
+//             width: 50%;
+//             position: absolute;
+//             top: 0;
+//         }
+//     }
+
+//     .menu {
+//         grid-area: menu-text;
+//         padding: 15rem 0 0 30%;
+//     }
+// }
 
 
 
@@ -246,12 +632,21 @@ nav {
     height: auto;
 }
 
-#beige {
-    background-color: #fef7ee;    
-}
+// #beige {
+//     background-color: #fef7ee;    
+// }
 
-#blue {
-    background-color: #dbf0fa;    
+// #blue {
+//     background-color: #dbf0fa;    
+// }
+
+// #green {
+//     background-color: #beefe4;
+// }
+
+.beige {
+    border: 5px solid #c48255;        
+    
 }
 
 .space {
