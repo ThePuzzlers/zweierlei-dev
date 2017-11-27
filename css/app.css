@@ -30,13 +30,20 @@ a {
   grid-template-rows: 5vh 100%;
   grid-template-areas: "navigation navigation navigation"  "stage stage stage"; }
 
+footer {
+  height: 14vh;
+  width: 100%;
+  background-color: #dbf0fa;
+  text-align: center; }
+
 nav {
   grid-area: navigation;
   font-size: .8rem;
   width: 100%;
   position: fixed;
   background-color: white;
-  z-index: 1; }
+  z-index: 1;
+  line-height: 1.2rem; }
   nav ul {
     width: 80%;
     margin: 0 auto;
@@ -142,7 +149,8 @@ nav {
   .stage .full {
     width: 100%; }
   .stage .quote {
-    height: 50vh; }
+    height: 50vh;
+    max-width: 50rem; }
     .stage .quote h3 {
       text-align: center;
       line-height: 2.4rem;
@@ -175,18 +183,18 @@ nav {
     grid-area: menu-deutschland;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 45rem 1fr;
     grid-template-areas: "frame" "menu-text"; }
     @media screen and (max-width: 768px) {
       #menus .menu-deutschland, #menus .menu-europa, #menus .menu-veggie {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: "frame menu-text";
-        height: 40rem; } }
-    @media screen and (max-width: 768px) {
+        height: 60rem; } }
+    @media screen and (max-width: 500px) {
       #menus .menu-deutschland, #menus .menu-europa, #menus .menu-veggie {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 45rem 1fr;
         grid-template-areas: "frame"  "menu-text";
         height: auto; } }
     #menus .menu-deutschland .img-container, #menus .menu-europa .img-container, #menus .menu-veggie .img-container {
@@ -215,18 +223,19 @@ nav {
           padding-top: 2rem; } }
   #menus .menu-europa {
     grid-area: menu-europa;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: "menu-text" "frame";
     padding-top: 20rem; }
     @media screen and (max-width: 768px) {
       #menus .menu-europa {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: "menu-text frame";
         padding-top: 2rem; } }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 500px) {
       #menus .menu-europa {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 40rem 1fr;
         grid-template-areas: "frame"  "menu-text";
         height: auto; } }
     #menus .menu-europa .img-container {
@@ -253,18 +262,19 @@ nav {
       padding-top: 2rem; }
   #menus .menu-veggie {
     grid-area: menu-veggie;
+    grid-template-rows: 40rem 1fr;
     grid-template-areas: "frame" "menu-text";
     padding-top: 10rem; }
     @media screen and (max-width: 768px) {
       #menus .menu-veggie {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: "frame menu-text";
         padding-top: 2rem; } }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 500px) {
       #menus .menu-veggie {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 40rem 1fr;
         grid-template-areas: "frame"  "menu-text";
         height: auto; } }
     #menus .menu-veggie .img-container {

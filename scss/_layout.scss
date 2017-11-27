@@ -20,6 +20,12 @@ a {
 
 
 
+footer {
+    height: 14vh;
+    width: 100%;
+    background-color: $blue;
+    text-align: center;
+}
 
 
 
@@ -30,6 +36,7 @@ nav {
     position: fixed;
     background-color: white;
     z-index: 1;
+    line-height: 1.2rem;
 
     ul {
         width: 80%;
@@ -189,6 +196,7 @@ nav {
 
     .quote {
         height: 50vh;
+        max-width: 50rem;
 
         h3 {
             text-align: center;
@@ -246,22 +254,22 @@ nav {
         grid-area: menu-deutschland;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 45rem 1fr;
         grid-template-areas: 
         "frame"
         "menu-text";
 
             @media screen and (max-width: $tablet-portrait-break) {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr;
+                grid-template-rows: 1fr 1fr;                                
                 grid-template-areas: 
                 "frame menu-text";
-                height: 40rem;
+                height: 60rem;
             }
 
-            @media screen and (max-width: $tablet-portrait-break) {
+            @media screen and (max-width: $phone-portrait-break) {
                 grid-template-columns: 1fr;
-                grid-template-rows: 1fr 1fr;
+                grid-template-rows: 45rem 1fr;                
                 grid-template-areas: 
                 "frame" 
                 "menu-text";
@@ -307,6 +315,7 @@ nav {
     .menu-europa {
         @extend .menu-deutschland;
         grid-area: menu-europa;
+        grid-template-rows: 1fr 1fr;        
         grid-template-areas: 
         "menu-text"
         "frame"; 
@@ -314,15 +323,15 @@ nav {
         
             @media screen and (max-width: $tablet-portrait-break) {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr;
+                grid-template-rows: 1fr 1fr;                        
                 grid-template-areas: 
                 "menu-text frame";
                 padding-top: 2rem;
             }
 
-            @media screen and (max-width: $tablet-portrait-break) {
+            @media screen and (max-width: $phone-portrait-break) {
                 grid-template-columns: 1fr;
-                grid-template-rows: 1fr 1fr;
+                grid-template-rows: 40rem 1fr;                                        
                 grid-template-areas: 
                 "frame" 
                 "menu-text";
@@ -367,6 +376,7 @@ nav {
     .menu-veggie {
         @extend .menu-deutschland;        
         grid-area: menu-veggie;
+        grid-template-rows: 40rem 1fr;                
         grid-template-areas: 
         "frame"
         "menu-text";
@@ -374,15 +384,15 @@ nav {
 
             @media screen and (max-width: $tablet-portrait-break) {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr;
+                grid-template-rows: 1fr 1fr;                                
                 grid-template-areas: 
                 "frame menu-text";
                 padding-top: 2rem;
             }
 
-            @media screen and (max-width: $tablet-portrait-break) {
+            @media screen and (max-width: $phone-portrait-break) {
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: 40rem 1fr;                            
             grid-template-areas: 
             "frame" 
             "menu-text";
