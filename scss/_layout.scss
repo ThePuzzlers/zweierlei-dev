@@ -12,10 +12,13 @@ a {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+        -ms-grid-columns: repeat(3, 1fr);
     grid-template-rows: 5vh 100%;
+        -ms-grid-rows: 5vh 100%;
     grid-template-areas: 
     "navigation navigation navigation" 
     "stage stage stage";
+    overflow: hidden;
 }
 
 
@@ -23,9 +26,11 @@ a {
 footer {
     height: 14vh;
     width: 100%;
-    background-color: $blue;
     text-align: center;
+    z-index: 10000;
+    position: absolute;
 }
+
 
 
 
@@ -41,7 +46,7 @@ nav {
     ul {
         width: 80%;
         margin: 0 auto;
-        height: 5vh;        
+        height: 10vh;        
         display: flex;
         align-items: center;
 
@@ -60,7 +65,7 @@ nav {
         display: flex;
         width: 70%;
         margin: 0 auto;
-        height: 95vh;
+        height: 90vh;
 
             @media screen and (max-width: $tablet-portrait-break) {
                 width: 80%;
@@ -164,6 +169,17 @@ nav {
                     line-height: 1.7rem;
                 }
 
+                .impressum {
+                    height: auto;
+                    display: block;
+                    grid-area: none;
+
+                    h2 {
+                        font-size: 2rem;
+                        word-wrap: break-word;
+                    }
+                }
+
                 .signatures {
                     grid-area: signatures; 
                     display: grid;
@@ -204,7 +220,14 @@ nav {
             font-size: 2rem;
         }
     }
+
+    .silvester {
+        @extend .quote;
+        height: auto;
+        margin-bottom: 5rem; 
+    }
 }
+
 
 
 
@@ -212,7 +235,9 @@ nav {
     display: grid;
     height: auto;
     grid-template-columns: 1fr 1fr;
+        -ms-grid-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 10rem;
+        -ms-grid-rows: 1fr 1fr 10rem;
     grid-template-areas: 
     "portrait-img portrait-img"
     "about signatures"
@@ -220,7 +245,9 @@ nav {
 
         @media screen and (max-width: $phone-portrait-break) {
             grid-template-columns: 1fr;
+                -ms-grid-columns: 1fr;
             grid-template-rows: 1fr 20rem 1fr 10rem;
+                -ms-grid-rows: 1fr 20rem 1fr 10rem;
             grid-template-areas: 
             "portrait-img"
             "signatures"            
@@ -229,20 +256,33 @@ nav {
         }
 }
 
+#impressum {
+    display: block;
+    height: auto;
+    margin-top: 10rem;
+}
+
+.top {
+    margin-top: 5rem;
+}
 
 
 #menus {
     display: grid;
     height: auto;
     grid-template-columns: 1fr 1fr 1fr;
+        -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
     grid-template-areas: 
     "menu-deutschland menu-europa menu-veggie"
     "menu-deutschland menu-europa menu-veggie";
 
         @media screen and (max-width: $tablet-portrait-break) {
             grid-template-columns: 1fr;
+                -ms-grid-columns: 1fr;            
             grid-template-rows: 1fr 1fr 1fr;
+                -ms-grid-rows: 1fr 1fr 1fr;
             grid-template-areas: 
             "menu-deutschland"
             "menu-europa"
@@ -254,14 +294,18 @@ nav {
         grid-area: menu-deutschland;
         display: grid;
         grid-template-columns: 1fr;
+            -ms-grid-columns: 1fr;
         grid-template-rows: 45rem 1fr;
+            -ms-grid-rows: 45rem 1fr;
         grid-template-areas: 
         "frame"
         "menu-text";
 
             @media screen and (max-width: $tablet-portrait-break) {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;                                
+                    -ms-grid-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr; 
+                    -ms-grid-rows: 1fr 1fr;                               
                 grid-template-areas: 
                 "frame menu-text";
                 height: 60rem;
@@ -269,7 +313,9 @@ nav {
 
             @media screen and (max-width: $phone-portrait-break) {
                 grid-template-columns: 1fr;
-                grid-template-rows: 45rem 1fr;                
+                    -ms-grid-columns: 1fr;
+                grid-template-rows: 45rem 1fr;    
+                    -ms-grid-rows: 45rem 1fr;            
                 grid-template-areas: 
                 "frame" 
                 "menu-text";
@@ -315,7 +361,8 @@ nav {
     .menu-europa {
         @extend .menu-deutschland;
         grid-area: menu-europa;
-        grid-template-rows: 1fr 1fr;        
+        grid-template-rows: 1fr 1fr; 
+            -ms-grid-rows: 1fr 1fr;        
         grid-template-areas: 
         "menu-text"
         "frame"; 
@@ -323,7 +370,9 @@ nav {
         
             @media screen and (max-width: $tablet-portrait-break) {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;                        
+                    -ms-grid-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;   
+                    -ms-grid-rows: 1fr 1fr;                     
                 grid-template-areas: 
                 "menu-text frame";
                 padding-top: 2rem;
@@ -331,7 +380,9 @@ nav {
 
             @media screen and (max-width: $phone-portrait-break) {
                 grid-template-columns: 1fr;
-                grid-template-rows: 40rem 1fr;                                        
+                    -ms-grid-columns: 1fr;
+                grid-template-rows: 40rem 1fr; 
+                    -ms-grid-rows: 40rem 1fr;                                        
                 grid-template-areas: 
                 "frame" 
                 "menu-text";
@@ -376,7 +427,8 @@ nav {
     .menu-veggie {
         @extend .menu-deutschland;        
         grid-area: menu-veggie;
-        grid-template-rows: 40rem 1fr;                
+        grid-template-rows: 40rem 1fr;  
+            -ms-grid-rows: 40rem 1fr;              
         grid-template-areas: 
         "frame"
         "menu-text";
@@ -384,7 +436,9 @@ nav {
 
             @media screen and (max-width: $tablet-portrait-break) {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;                                
+                    -ms-grid-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr; 
+                    -ms-grid-rows: 1fr 1fr;                               
                 grid-template-areas: 
                 "frame menu-text";
                 padding-top: 2rem;
@@ -392,7 +446,9 @@ nav {
 
             @media screen and (max-width: $phone-portrait-break) {
             grid-template-columns: 1fr;
-            grid-template-rows: 40rem 1fr;                            
+                -ms-grid-columns: 1fr;
+            grid-template-rows: 40rem 1fr;
+                -ms-grid-rows: 40rem 1fr;                            
             grid-template-areas: 
             "frame" 
             "menu-text";
@@ -432,23 +488,36 @@ nav {
 }
 
 
+iframe {
+    width: 100%;
+    min-height: 20rem;
+}
+
 
 #contact {
     display: grid;
     height: 100vh;
     padding-top: 10rem;
     grid-template-columns: 1fr 1fr;
+        -ms-grid-columns: 1fr 1fr;    
     grid-template-rows: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;    
     grid-template-areas: 
     "map contact"
     "map contact";
+    width: 70%;
 
         @media screen and (max-width: $tablet-portrait-break) {
             grid-template-columns: 1fr;
+                -ms-grid-columns: 1fr;            
             grid-template-rows: 1fr 1fr;
+                -ms-grid-rows: 1fr 1fr;            
             grid-template-areas: 
             "contact"
             "map";
+            @media screen and (max-width: $tablet-portrait-break) {
+                margin-bottom: 5rem;       
+            }
         }
 
         @media screen and (max-width: $tablet-portrait-break) {
@@ -493,7 +562,7 @@ nav {
         line-height: 1.7rem;
 
         @media screen and (max-width: $tablet-portrait-break) {
-            padding: 0 0 0 0;       
+            padding: 0rem 2rem 0 2rem;       
         }
     }
 }
